@@ -20,9 +20,9 @@
         
         <div class="d-flex align-items-center base-buttoninput gap-5">
         <!--Button section-->
-        <div class="base-button">
-            <button type="button" class="btn btn-success">new</button>
-            <button type="button" class="btn btn-primary">Load</button>
+       <div class="base-button">
+            <button type="button" class="btn btn-success" id="btnOpenNew" data-bs-toggle="modal" data-bs-target="#analysisModal">New</button>
+            <button type="button" class="btn btn-primary" id="btnOpenLoad" data-bs-toggle="modal" data-bs-target="#analysisModal">Load</button>
         </div>
         
         <!--INPUT section-->
@@ -81,6 +81,82 @@
                 </ul>
             </nav>
             <!--END Side bar Area-->
+
+            <!--Modal Area now/load-->
+            <div class="modal fade" id="analysisModal" tabindex="-1" aria-labelledby="analysisModalLabel" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered modal-lg">
+                    <div class="modal-content border-0 shadow-lg" style="border-radius: 12px; min-height: 400px;">
+                        
+                        <div class="modal-header border-0 pb-0 position-relative mt-2 px-5">
+                            <button type="button" class="btn-close position-absolute top-0 end-0 me-3" data-bs-dismiss="modal" aria-label="Close"></button>
+                            
+                            <ul class="nav nav-tabs custom-analysis-tabs border-0 w-100 text-center" id="analysisTabs" role="tablist">
+                                <li class="nav-item w-50" role="presentation">
+                                    <button class="nav-link active w-100 pb-3" id="new-tab" data-bs-toggle="tab" data-bs-target="#newAnalysis" type="button" role="tab">New Analysis</button>
+                                </li>
+                                <li class="nav-item w-50" role="presentation">
+                                    <button class="nav-link w-100 pb-3" id="load-tab" data-bs-toggle="tab" data-bs-target="#loadAnalysis" type="button" role="tab">Load Analysis</button>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <div class="modal-body px-5 py-4">
+                            <div class="tab-content" id="analysisTabContent">
+                                
+                                <div class="tab-pane fade show active" id="newAnalysis" role="tabpanel">
+                                    <div class="d-flex flex-column align-items-center justify-content-center gap-3 mt-4">
+                                        <div class="d-flex align-items-center gap-3">
+                                            <label style="width: 120px; font-weight: 500; color: #555;">Analysis Name :</label>
+                                            <input type="text" class="form-control" id="modalInputAnalysis" style="width: 250px;">
+                                        </div>
+                                        <div class="d-flex align-items-center gap-3">
+                                            <label style="width: 120px; font-weight: 500; color: #555;">Analyst Name :</label>
+                                            <input type="text" class="form-control" id="modalInputAnalyst" style="width: 250px;">
+                                        </div>
+                                    </div>
+                                    <div class="d-flex justify-content-end mt-5">
+                                        <button type="button" class="btn" style="border: 1px solid #7A32B2; color: #7A32B2; border-radius: 6px; padding: 4px 24px;" id="btnSaveNew">Save</button>
+                                    </div>
+                                </div>
+
+                                <div class="tab-pane fade" id="loadAnalysis" role="tabpanel">
+                                    <div class="mb-3 d-flex align-items-center gap-2">
+                                        <span class="badge text-white" style="background-color: #bd00ff;">1</span>
+                                        <span class="text-secondary" style="font-size: 14px;">Saved Analysis</span>
+                                    </div>
+                                    <div class="table-responsive">
+                                        <table class="table table-borderless border-bottom text-center mb-0" style="font-size: 14px;">
+                                            <thead style="background-color: #f8f9fa;">
+                                                <tr>
+                                                    <th class="py-2 text-muted fw-semibold"></th>
+                                                    <th class="py-2 text-muted fw-semibold">Analysis Name</th>
+                                                    <th class="py-2 text-muted fw-semibold">Analyst Name</th>
+                                                    <th class="py-2 text-muted fw-semibold">Date Created</th>
+                                                    <th class="py-2 text-muted fw-semibold">Date Modified</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr style="border-bottom: 1px solid #eee;">
+                                                    <td class="align-middle"><input class="form-check-input" type="radio" name="selectAnalysis" value="Financial Analysis|Project Analyst"></td>
+                                                    <td class="align-middle">Financial Analysis</td>
+                                                    <td class="align-middle">Project Analyst</td>
+                                                    <td class="align-middle text-secondary">21/03/2023</td>
+                                                    <td class="align-middle text-secondary">21/03/2023</td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                    <div class="d-flex justify-content-center gap-3 mt-4">
+                                        <button type="button" class="btn btn-outline-success px-4 py-1">Edit</button>
+                                        <button type="button" class="btn btn-outline-primary px-4 py-1" id="btnLoadData">Load</button>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
             
             <!--Inject content Area/Extend-->
             <!-- DIPERBAIKI: tambah 'overflow-auto' agar konten bisa scroll saat zoom 150%, bukan terpotong -->
@@ -90,6 +166,64 @@
         </div>
     </div>
 
+
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+    
+    // 1. Logika untuk memicu Tab yang benar saat Modal dibuka
+    const btnOpenNew = document.getElementById('btnOpenNew');
+    const btnOpenLoad = document.getElementById('btnOpenLoad');
+    
+    // Inisialisasi tab Bootstrap
+    const newTab = new bootstrap.Tab(document.getElementById('new-tab'));
+    const loadTab = new bootstrap.Tab(document.getElementById('load-tab'));
+
+    btnOpenNew.addEventListener('click', function() {
+        newTab.show(); // Buka tab New Analysis
+    });
+
+    btnOpenLoad.addEventListener('click', function() {
+        loadTab.show(); // Buka tab Load Analysis
+    });
+
+    // 2. Logika untuk tombol "Save" pada tab New Analysis
+    document.getElementById('btnSaveNew').addEventListener('click', function() {
+        // Ambil nilai dari input di dalam modal
+        const newAnalysisVal = document.getElementById('modalInputAnalysis').value;
+        const newAnalystVal = document.getElementById('modalInputAnalyst').value;
+        
+        // Pindahkan ke input di Header halaman
+        document.getElementById('analysis').value = newAnalysisVal;
+        document.getElementById('analyst').value = newAnalystVal;
+        
+        // Tutup Modal
+        const modal = bootstrap.Modal.getInstance(document.getElementById('analysisModal'));
+        modal.hide();
+    });
+
+    // 3. Logika untuk tombol "Load" pada tab Load Analysis
+    document.getElementById('btnLoadData').addEventListener('click', function() {
+        // Cari radio button mana yang dipilih user
+        const selectedRadio = document.querySelector('input[name="selectAnalysis"]:checked');
+        
+        if(selectedRadio) {
+            // Karena value kita simpan sebagai "AnalysisName|AnalystName", kita split menggunakan karakter "|"
+            const dataParts = selectedRadio.value.split('|');
+            
+            // Pindahkan ke input di Header halaman
+            document.getElementById('analysis').value = dataParts[0]; // Financial Analysis
+            document.getElementById('analyst').value = dataParts[1]; // Project Analyst
+            
+            // Tutup Modal
+            const modal = bootstrap.Modal.getInstance(document.getElementById('analysisModal'));
+            modal.hide();
+        } else {
+            alert("Silakan pilih salah satu data dari tabel terlebih dahulu!");
+        }
+    });
+});
+    </script>
     <!-- Optional JavaScript -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <!-- Add any other scripts here -->

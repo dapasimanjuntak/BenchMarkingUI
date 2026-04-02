@@ -42,6 +42,31 @@ body{
         position: relative;
     }
 
+    /* =========================================
+   STYLING TAB MODAL Base.html new/load
+   ========================================= */
+.custom-analysis-tabs {
+    border-bottom: 2px solid #E8E5EF !important; /* Garis dasar abu-abu/ungu pucat */
+}
+
+.custom-analysis-tabs .nav-link {
+    color: #666;
+    font-weight: 600;
+    border: none !important;
+    background: transparent !important;
+    position: relative;
+    top: 2px; /* Menurunkan garis agar menimpa border-bottom parent */
+}
+
+.custom-analysis-tabs .nav-link.active {
+    color: #333 !important;
+    border-bottom: 3px solid #bd00ff !important; /* Garis aktif ungu menyala */
+}
+
+.custom-analysis-tabs .nav-link:hover {
+    color: #bd00ff;
+}
+
     /* Change The color of img*/
     .btn-icon img {
         width: auto;
