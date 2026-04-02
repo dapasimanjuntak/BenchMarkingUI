@@ -26,11 +26,88 @@
    <!--END OF LOAN HEADER SECTION--> 
    
     <!--Main LOAN area-->
-    <div class="mt-2 d-flex justify-content-end display-button-loan2 pe-3">
-        <button>
-            <i class="fas fa-table"></i>
-             <span>Display</span>
-        </button>
+    <div class="d-flex justify-content-end pe-2 mt-2 mb-2">
+        <div class="dropdown">
+            <button class="btn card3-button2 dropdown-toggle-custom d-flex align-items-center gap-2" type="button" id="displayColumnsDropdown" data-bs-toggle="dropdown" aria-expanded="false" data-bs-auto-close="outside">
+                <i class="fas fa-columns"></i> Display Columns
+            </button>
+            
+            <ul class="dropdown-menu shadow p-2 mt-1 column-dropdown-menu" aria-labelledby="displayColumnsDropdown">
+                <li>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" id="col_functional">
+                        <label class="form-check-label text-secondary" for="col_functional">Functional Analysis</label>
+                    </div>
+                </li>
+                <li>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" id="col_type" checked>
+                        <label class="form-check-label text-secondary" for="col_type">Transaction Involving transfer of rightds in intangibles</label>
+                    </div>
+                </li>
+                <li>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" id="col_licensor" checked>
+                        <label class="form-check-label text-secondary" for="col_licensor">Transaction Involving Transfer of Intangible</label>
+                    </div>
+                </li>
+                <li>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" id="col_licensor_act" checked>
+                        <label class="form-check-label text-secondary" for="col_licensor_act">Transaction Involving Transfer of Intangibles in Connection
+                             with the sale of goods or the provision of services(no rights in intangibles are acquired)</label>
+                    </div>
+                </li>
+                <li>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" id="col_licensee" checked>
+                        <label class="form-check-label text-secondary" for="col_licensee">Royalty rate</label>
+                    </div>
+                </li>
+                <li>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" id="col_licensee_act" checked>
+                        <label class="form-check-label text-secondary" for="col_licensee_act">Base</label>
+                    </div>
+                </li>
+                <li>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" id="col_desc" checked>
+                        <label class="form-check-label text-secondary" for="col_desc">other payments</label>
+                    </div>
+                </li>
+                <li>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" id="col_geo" checked>
+                        <label class="form-check-label text-secondary" for="col_geo">Compensation Details</label>
+                    </div>
+                </li>
+                <li>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" id="col_date_agree" checked>
+                        <label class="form-check-label text-secondary" for="col_date_agree">Document Title</label>
+                    </div>
+                </li>
+                <li>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" id="col_effective" checked>
+                        <label class="form-check-label text-secondary" for="col_effective">Patent/Trademark No.</label>
+                    </div>
+                </li>
+                <li>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" id="col_cessation" checked>
+                        <label class="form-check-label text-secondary" for="col_cessation">patent/trademark synopsis</label>
+                    </div>
+                </li>
+                <li>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" id="col_duration" checked>
+                        <label class="form-check-label text-secondary" for="col_duration">Duration Terms</label>
+                    </div>
+                </li>
+            </ul>
+        </div>
     </div>
     
     <div class="card p-3 mt-2 table-loan2">

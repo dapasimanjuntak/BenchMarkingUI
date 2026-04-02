@@ -1,104 +1,874 @@
-/* Global Reset */
 *{
     box-sizing: border-box;
 }
-body, html {
-  margin: 0;
-  padding: 0;
-  height: 100%;
-  overflow: hidden;
+
+body{
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    overflow: hidden;
+     font-family: 'Inter' !important;
+   
 }
 
-/* Sidebar Style */
+
+/*header section*/
+
+/*Base Input section*/
+.base-input{
+ font-size: 16px;
+}
+
+/*Base Button section*/
+.base-button button{
+    padding:4px 26px;
+    font-size: 17px; 
+    border-radius: 20px; 
+    color: #ffffff; 
+    border: none; 
+    height: 30px;
+    line-height: 0.5rem; /* Jarak teks */
+}
+
+
+
+/*Base Icon Section*/
+.btn-icon {
+        background-color: transparent;
+        border: none;
+        padding: 10px;
+        border-radius: 50%;
+        transition: background-color 0.3s ease;
+        position: relative;
+    }
+
+    /* Change The color of img*/
+    .btn-icon img {
+        width: auto;
+        height: 20px;
+        filter: grayscale(1) brightness(0.8); /*Buat Mulai Abu-abu gelap */
+        transition: filter 0.3s ease;
+        position: relative;
+        z-index: 1;
+    }
+
+    /* Hover Circel */
+    .btn-icon::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background-color: rgba(0, 0, 0, 0); /*agar hover lingkaran awalnya transparan */
+        border-radius: 50%;
+        transition: background-color 0.3s ease;
+        z-index: 0;
+    }
+
+    .btn-icon:hover::before {
+        background-color: rgba(0, 0, 0, 0.091); /* Lingkaran gelap transparan saat hover */
+    }
+
+    /* img become purple */
+    .btn-icon:hover img {
+        filter: sepia(1) saturate(10000%) hue-rotate(270deg) brightness(0.6);
+    }
+/*END Header Section*/
+
+/*Side Bar Section*/
 .sidebar {
-  width: 200px;
-  min-height: 100vh;
-  transition: all 0.3s ease-in-out;
-  font-size: 12px;
-  text-align: center;
-  padding-bottom: 100px;
+    background-color: #f8f9fa; /* Bootstrap light */
 }
 
-/* Ikon dan Teks Vertikal */
-.nav-icon-text {
-  display: flex;
-  flex-direction: column;
+.sidebar-hidden {
+    display: none;
+  }
+
+.sidebar .nav {
+    padding: 0;
+}
+
+
+.sidebar .nav-item {
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.sidebar .nav-item a {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-decoration: none;
+    color: #333;
+    font-size: 18px;
+    transition: color 0.2s;
+}
+
+.sidebar .nav-item a:hover {
+    background-color: #c6c6c6e3;
+}
+
+.sidebar .nav-item img {
+    width: 40px;
+    height: 45px;
+    margin-bottom: 10px;
+}
+
+.sidebar .nav-item.active {
+    background-color: rgba(111, 66, 193, 0.2); /* ungu gelap transparan */
+    border-left: 5px solid #6f42c1; /* garis ungu di kiri */
+    border-radius: none;
+}
+
+.sidebar .nav-item.active a {
+    color: #6f42c1; /* teks ungu gelap */
+}
+
+.sidebar .nav-item.active img {
+    filter: sepia(1) saturate(10000%) hue-rotate(270deg) brightness(0.6);
+}
+
+.area-content{
+    background: rgba(169, 177, 201, 0.282);
+}
+/*End of base.html/layout parent STYLE*/
+
+
+/*-----------------------------------------LOAN SECTION-----------------------------------------------------------*/
+/*------------------HEADER LOAN SECTION-------------------*/
+
+/*HEADER NAV STYLE*/
+.step-style{
+    font-size: 16 px;
+    gap: 5px;
+    font-weight: 400;
+}
+.arrow-shape {
+   display: flex;
   align-items: center;
+  justify-content: center;
+  height: 70px;
+  width: 520px; /* Sesuaikan lebar yang diinginkan */
+  background-color: #ffffff;
+clip-path: polygon(0 0, 95% 0, 100% 50%, 95% 100%, 0 100%, 5% 50%);
+  padding: 0 25px;
+}
+.step-item{
+    text-decoration: none;
+    color: #333;
 }
 
-.nav-icon-text i {
-  font-size: 22px;
-  margin-bottom: 5px;
+.step-item:hover{
+    background-color: #c3c3c36c;
+    color: #444444;
 }
 
-/* Default link */
-.sidebar .nav-link {
-  color: #939292;
-  padding: 15px 10px;
-  transition: background 0.2s, color 0.2s;
-  border-radius: 8px;
+.step-item.active{
+    background-color: #9a9a9a6c;
+    color: #57297A;
+    font-weight: bold;
 }
 
-/* Hover effect */
-.sidebar .nav-link:hover {
-  background-color: #c9c9c9;
-  color: #939292;
+/*LOAN NAV HEADER STYLE END*/
+
+
+/*LOAN BUTTON HEADER*/
+.button-header-loan button{
+    padding:4px 25px;
+    font-size: 15px; 
+    border-radius: 20px; 
+    background-color: #7A32B2;
+    color: #ffffff; 
+    border: none; 
+    height: 25px;
+    line-height: 1.0rem; /* Ubah posisi dalam teksi */
 }
 
-/* Active link */
-.sidebar .nav-link.active {
-  background-color: #e7e4f5;
-  color: #5f3dc4;
-  font-weight: bold;
+.button-header-loan a{
+    text-decoration: none;
+    color:#ffffff
 }
 
-.sidebar .nav-link.active i {
-  color: #5f3dc4;
+.button-header-loan button:hover{
+    background-color: #4a00d3;
+    color: #ffffff;
+}
+/*LOAN BUTTON HEADER END*/
+
+/*------------------END HEADER LOAN SECTION-------------------*/
+
+
+/*------------------ MAIN LOAN AREA STYLE--------------------------*/
+
+/*------------LOAN STEP 1-----------------------*/
+
+/*card1 style content*/
+
+
+.card1 thead th{
+    font-size: 14px;
+    font-weight: 500;
+    color: #524e5a;
+}
+.card1 tbody td{
+    font-size: 14px;
+    font-weight: 400;
+    color: #79767E;
+}
+.card1 tfoot th{
+    font-size: 14px;
+    font-weight: 500;
+}
+/*END Style card1*/
+
+
+
+/*Card 2 Style*/
+.card2{
+    max-height: 450px;
+    overflow: hidden;
+}
+
+.card2-scroll{
+    overflow-y: scroll;
+}
+
+.card2-scroll input{
+    border-radius: none;
+}
+.small{
+    font-size: 14px;
+    font-weight: 600;
+    font-family: 'Inter' !important;
+    
+}
+/*end card 2*/
+
+
+/* Card 3 area style */
+
+/*Search Style Card 3*/
+.card3-header-search input {
+    background-color: transparent;
+     height: 38px;     /* Ubah tinggi input */
+    font-size: 14px;  /* Ukuran teks di input */
+    padding: 4px 10px;
+    width: 45rem !important;   /* Atur lebar input (opsional) */
+}
+
+/* =========================================
+   STYLING HISTORY MODAL (Sesuai Gambar)
+   ========================================= */
+
+/* Tab Navigasi Modal */
+.custom-history-tabs {
+    gap: 15px;
+}
+
+.custom-history-tabs .nav-link {
+    border: none;
+    color: #6c757d;
+    font-weight: 600;
+    font-size: 15px;
+    padding: 10px 15px;
+    background: transparent;
+}
+
+.custom-history-tabs .nav-link:hover {
+    border: none;
+    color: #333;
+}
+
+/* Tab Aktif dengan garis ungu */
+.custom-history-tabs .nav-link.active {
+    color: #333;
+    border: none;
+    border-bottom: 3px solid #bd00ff; /* Warna ungu seperti di gambar */
+    background: transparent;
+}
+
+/* Area Scroll List History */
+.history-list-container {
+    max-height: 300px;
+    overflow-y: auto;
+    padding-right: 5px; 
+}
+
+/* Custom Scrollbar untuk Modal History */
+.history-list-container::-webkit-scrollbar {
+    width: 6px;
+}
+.history-list-container::-webkit-scrollbar-track {
+    background: transparent;
+}
+.history-list-container::-webkit-scrollbar-thumb {
+    background: #e0e0e0;
+    border-radius: 10px;
+}
+
+/* Judul Tanggal */
+.history-date {
+    font-size: 14px;
+    font-weight: 600;
+    color: #444;
+    margin-left: 15px;
+}
+
+/* Styling List Item */
+.history-list {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.history-list li {
+    padding: 8px 15px 8px 25px; /* Menjorok ke dalam (indent) */
+    font-size: 14px;
+    color: #79767E; /* Warna abu-abu teks */
+    cursor: pointer;
+    transition: background-color 0.2s, color 0.2s;
+}
+
+.history-list li:hover {
+    background-color: #f8f4ff;
+    color: #bd00ff;
+    border-radius: 4px;
+}
+/*Button icon 1 card 3*/
+.card3-button1{
+    font-size: 16px;
+    font-weight: 400;
+    color: #7A32B2;
+}
+.card3-button1:hover{
+    background-color: hsla(208, 26%, 80%, 0.298);
+    color: #7A32B2;
+}
+
+.history-card3-nav button:active{
+    border-bottom: 2px solid purple;
+    font-weight: none;
+}
+
+.history-card3-search{
+    max-height: 30rem;
+    overflow-y: auto;
+}
+
+.search-history-list li{
+    margin: 0 0 10px 10px;
+    list-style-type: none;
+    font-size: 15px;
+    padding-left: 10px;
+}
+
+.agreement-modal-body{
+    width: 100%;
+}
+
+.agreement-modal-table{
+    max-height: 33rem; 
+    overflow-y: auto;
+    font-size: 15px;
+}
+
+.agreement-modal-button button{
+    font-size: 14px;
+    border-radius: 50px;
+    background-color: #d49bffa9;
+    color: white;
+}
+.agreement-modal-button button:hover{
+    background-color: #7A32B2;
+    color:white;
+}
+
+.agreement-modal-inner th{
+    background-color: #eaeaea82 !important;
+    font-size: 16px;
+    font-weight: 500;
+}
+
+.agreement-modal-inner td{
+    font-size: 16px; 
+    font-weight: 400;
+    color: #79767E;
+
+}
+.agreement-modal-inner textarea{
+    width: 100px;
+    height: 100px;
+    border: 1px solid;
+}
+/*BUTTON 2 CARD 3*/
+.card3-button2{
+    font-size: 16px;
+    font-weight: 500;
+    color: #7A32B2;
+    border: 1px #7A32B2 solid;
+    background: none;
+    height: 40px;
+    width: 195px;
+    border-radius: 4px;
+}
+/* Styling Tombol Display Columns */
+.card3-button2 {
+    background-color: #ffffff;
+    color: #7b42b5; /* Warna ungu */
+    border: 1px solid #7b42b5;
+    border-radius: 6px;
+    padding: 6px 16px;
+    font-weight: 500;
+    transition: all 0.2s;
+}
+
+.card3-button2:hover {
+    background-color: #f8f4ff;
+    color: #7b42b5;
+}
+
+/* Membatasi tinggi dropdown agar bisa di-scroll */
+.column-dropdown-menu {
+    max-height: 250px;
+    overflow-y: auto;
+    width: 260px;
+    border-radius: 8px;
+    border: 1px solid #e0e0e0;
+}
+
+/* Custom Scrollbar untuk menu */
+.column-dropdown-menu::-webkit-scrollbar {
+    width: 8px;
+}
+.column-dropdown-menu::-webkit-scrollbar-track {
+    background: transparent;
+}
+.column-dropdown-menu::-webkit-scrollbar-thumb {
+    background-color: #e0e0e0;
+    border-radius: 10px;
+}
+
+/* Styling Checkbox Ungu */
+.column-dropdown-menu .form-check-input:checked {
+    background-color: #7b42b5;
+    border-color: #7b42b5;
+}
+
+.column-dropdown-menu .form-check-input:focus {
+    box-shadow: 0 0 0 0.25rem rgba(123, 66, 181, 0.25);
+    border-color: #7b42b5;
+}
+
+.column-dropdown-menu li {
+    padding: 4px 12px;
+}
+
+/*TABLE CARD 3 AREA*/
+.table-card3 {
+    overflow-x: auto;
+    overflow-y: auto;
+    max-height: 500px; /* Adjust this value as needed */
+    font-size: 15px;
+}
+
+.table-inner {
+    width: 100%;
+    white-space: normal; /* Changed from nowrap to normal to allow wrapping */
+    table-layout: fixed; /* Important: this makes the table respect column widths */
+}
+
+.table-inner th, 
+.table-inner td {
+    padding: 8px;
+    vertical-align:top;
+    word-wrap: break-word; /* Allow long words to break */
+    word-break: break-word; /* Break long words if necessary */
+    white-space: normal; /* Allow text wrapping */
+    overflow-wrap: break-word; /* Modern property for word breaking */
+    hyphens: auto; /* Add hyphens for better readability */
+}
+
+/* Set specific widths for columns to control text wrapping */
+
+.table-inner th:nth-child(1), 
+.table-inner td:nth-child(1) { /* Checkbox column */
+    width: 80px;
+    min-width: 40px;
+}
+
+.table-inner th:nth-child(2), 
+.table-inner td:nth-child(2) { /* No */
+    width: 80px;
+    min-width: 50px;
+}
+
+.table-inner th:nth-child(3), 
+.table-inner td:nth-child(3) { /* Previews */
+    width: 120px;
+    min-width: 60px;
+}
+
+.table-inner th:nth-child(4), 
+.table-inner td:nth-child(4) { /* Transaction Type */
+    width: 150px;
+    min-width: 120px;
+}
+
+.table-inner th:nth-child(5), 
+.table-inner td:nth-child(5) { /* Description of Transaction */
+    width: 250px;
+    min-width: 200px;
+}
+
+.table-inner th:nth-child(6), 
+.table-inner td:nth-child(6) { /* Borrower's Country */
+    width: 130px;
+    min-width: 80px;
+}
+
+.table-inner th:nth-child(7), 
+.table-inner td:nth-child(7) { /* Assigned Borower Credit Ratings */
+    width: 500px;
+    min-width: 80px;
+}
+
+.table-inner th:nth-child(8), 
+.table-inner td:nth-child(8) { /* Geographical */
+    width: 210px;
+    min-width: 80px;
+}
+
+.table-inner th:nth-child(9), 
+.table-inner td:nth-child(9) { /* Date Of Agreement */
+    width: 130px;
+    min-width: 80px;
+}
+
+.table-inner th:nth-child(10), 
+.table-inner td:nth-child(10) { /* Effective Date */
+    width: 130px;
+    min-width: 120px;
+}
+
+.table-inner th:nth-child(11), 
+.table-inner td:nth-child(11) { /* Cessation Date */
+    width: 130px;
+    min-width: 120px;
+}
+
+.table-inner th:nth-child(12), 
+.table-inner td:nth-child(12) { /* Duration Terms*/
+    width: 280px;
+    min-width: 120px;
+}
+
+.table-inner th:nth-child(13), 
+.table-inner td:nth-child(13) { /* Class of Limitation */
+    width: 190px;
+    min-width: 120px;
+}
+
+.table-inner th:nth-child(14), 
+.table-inner td:nth-child(14) { /* Exclusivity */
+    width: 180px;
+    min-width: 120px;
+}
+
+.table-inner th:nth-child(15), 
+.table-inner td:nth-child(15) { /*  Restrictions of The Use, Exploration, Reproduction, Further Transfer, Futher Development */
+    width: 340px;
+    min-width: 120px;
+}
+
+.table-inner th:nth-child(16), 
+.table-inner td:nth-child(16) { /* Extend and Duration of Legal Protection */
+    width: 220px;
+    min-width: 120px;
+}
+
+.table-inner th:nth-child(17), 
+.table-inner td:nth-child(17) { /* UseFull Live */
+    width: 130px;
+    min-width: 120px;
+}
+
+.table-inner th:nth-child(18), 
+.table-inner td:nth-child(18) { /* Stage Of Development */
+    width: 250px;
+    min-width: 120px;
+}
+
+.table-inner th:nth-child(19), 
+.table-inner td:nth-child(19) { /* Rights to enchanments */
+    width: 450px;
+    min-width: 120px;
+}
+
+.table-inner th:nth-child(20), 
+.table-inner td:nth-child(20) { /* Expectation of future benefit */
+    width: 150px;
+    min-width: 120px;
 }
 
 
-/* Main Content */
-.main-content {
-  min-height: 100vh;
-  transition: margin-left 0.3s;
+
+/* Fix for the table header to keep it visible during scrolling */
+.table-inner thead {
+    position: sticky;
+    top: 0;
+    z-index: 1;
+    background-color: #8dc6ffaa !important;
 }
 
-/* Header style */
-.header {
-  height: 60px;
-  position: sticky;
-  top: 0;
-  z-index: 1000;
+/* Make table container take remaining height */
+.table-card3 {
+    flex: 1;
 }
 
-.header .icon-group i {
-  cursor: pointer;
-  font-size: 18px;
+/* Fix for table header alignment */
+.table-inner thead th {
+    text-align: center;
+    vertical-align: middle;
+    color: #444444;
 }
 
-.header .icon-group i:hover {
-  color: #ffc107;
+.table-inner tbody td {
+    color: #786767;
+    text-align: left; /* Change to left align for better readability of wrapped text */
 }
 
-/*untuk button dan input di header*/
-/* style.css */
-
-.compact-input input {
-  font-size: 12px;
-  padding: 2px 6px;
-  height: 15px;
+/* Special styling for list items in table cells */
+.table-inner ul {
+    margin: 0;
+    padding-left: 15px;
+    text-align: left;
 }
 
-.compact-buttons button {
-  font-size: 10px;
-  height: 20px;
+.table-inner li {
+    margin: 2px 0;
+}
+/*------------------LOAN STEP 1 END------------------*/
+
+/*------------------LOAN STEP 2 START----------------*/
+
+.display-button-loan2 button{
+    border: 1px solid purple !important;
+    border-radius: 3px !important;
+    width: 13rem;
+    height: 2.5rem;
+    background-color: #ffffff;
+}
+
+.display-button-loan2 button:hover{
+    background-color: #ffffff;
+}
+.display-button-loan2 i{
+  font-size: 19px;
   text-align: center;
+  color: #6f42c1;
+}
+
+.display-button-loan2 span{
+  font-size: 19px;
+  text-align: center;
+  color: #6f42c1;
+}
+
+/*Table Loan 2*/
+.table-loan2{
+    font-weight: normal !important;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    overflow-x: auto;
+    overflow-y: auto;
+    max-height: 42rem; /* Adjust this value as needed */
+    font-size: 16  px;
+    
+}
+
+.kolom1{
+    border: 1px solid blueviolet;
+     background-color: blueviolet; 
+     color: aliceblue;
+    max-width: 50px ;
+    min-width: 30px; 
+     text-align: center;
+}
+
+.table-loan2-inner {
+    width: 100vh;
+    white-space: normal; /* Changed from nowrap to normal to allow wrapping */
+    table-layout: fixed; /* Important: this makes the table respect column widths */
+}
+
+.table-loan2-inner th, 
+.table-loan2-inner td {
+    padding: 8px;
+    vertical-align: middle;
+    word-wrap: break-word; /* Allow long words to break */
+    word-break: break-word; /* Break long words if necessary */
+    white-space: normal; /* Allow text wrapping */
+    overflow-wrap: break-word; /* Modern property for word breaking */
+    hyphens: auto; /* Add hyphens for better readability */
+}
+
+.table-loan2-inner thead th {
+    position: sticky;
+    top: 0;
+    z-index: 1;
+    background-color: #eaeaea82 !important;
+    color: #524E59 !important;
+}
+
+.table-loan2-inner tbody td{
+    color: #79767E;
+}
+
+.table-loan2-inner th:nth-child(1), 
+.table-loan2-inner td:nth-child(1) { /*kolom 1*/
+    width: 210px;
+    min-width: 40px;
+}
+
+.table-loan2-inner th:nth-child(2), 
+.table-loan2-inner td:nth-child(2) { /*Coments*/
+    width: 125px;
+    min-width: 40px;
+}
+
+.table-loan2-inner th:nth-child(3), 
+.table-loan2-inner td:nth-child(3) { /*No*/
+    width: 80px;
+    min-width: 40px;
+}
+
+.table-loan2-inner th:nth-child(4), 
+.table-loan2-inner td:nth-child(4) { /*previews*/
+    width: 88px;
+    min-width: 40px;
+}
+
+.table-loan2-inner th:nth-child(5), 
+.table-loan2-inner td:nth-child(5) { /*trensaction involving right*/
+    width: 186px;
+    min-width: 40px;
+}
+
+.table-loan2-inner th:nth-child(6), 
+.table-loan2-inner td:nth-child(6) { /*trensaction involving transfer*/
+    width: 190px;
+    min-width: 40px;
+}
+
+.table-loan2-inner th:nth-child(7), 
+.table-loan2-inner td:nth-child(7) { /*trensaction involving Sevices*/
+    width: 443px;
+    min-width: 40px;
+}
+
+.table-loan2-inner th:nth-child(8), 
+.table-loan2-inner td:nth-child(8) { /*Royalty Rate*/
+    width: 122px;
+    min-width: 40px;
+}
+
+.table-loan2-inner th:nth-child(9), 
+.table-loan2-inner td:nth-child(9) { /*Base*/
+    width: 100px;
+    min-width: 40px;
 }
 
 
-#toggleSidebar {
-  position: fixed;
-  top: 70px; /* bawah dari header */
-  left: 10px;
-  z-index: 9999;
+.table-loan2-inner th:nth-child(10), 
+.table-loan2-inner td:nth-child(10) { /*other payments*/
+    width: 361px;
+    min-width: 40px;
+}
+
+
+.table-loan2-inner th:nth-child(11), 
+.table-loan2-inner td:nth-child(11) { /*Compensation*/
+    width: 400px;
+    min-width: 40px;
+}
+
+.table-loan2-inner th:nth-child(12), 
+.table-loan2-inner td:nth-child(12) { /*Document*/
+    width: 180px;
+    min-width: 40px;
+}
+
+.table-loan2-inner th:nth-child(13), 
+.table-loan2-inner td:nth-child(13) { /*trademark no*/
+    width: 300px;
+    min-width: 40px;
+}
+
+
+.table-loan2-inner th:nth-child(14), 
+.table-loan2-inner td:nth-child(14) { /*trade mark synopsis*/
+    width: 450px;
+    min-width: 40px;
+}
+
+/*----------------------------END LOAN STEP 2 STYLE ---------------*/
+
+/*------------------------lOAN STEP 3------------------------------*/
+
+ .table-loan3 {
+            max-height: 42rem; /* Atur tinggi maksimal sesuai kebutuhan */
+            overflow-y: auto;
+            border: 2px solid #dee2e6;
+            border-radius: 0.375rem;
+        }
+
+
+.table-loan3-inner th
+{
+    font-size: 500;
+    font: 16px;
+    color: #524E59;
+    vertical-align: middle;
+}
+
+.table-loan3-inner td{
+    font: 16px;
+    font-weight: 400;
+    color: #79767E;
+}
+
+/*CUSTOM TABEL LAON 3 AREA*/
+.table-loan3-inner th:nth-child(1){
+    width: 66px;
+    height: 80px;
+}
+.table-loan3-inner td:nth-child(1){
+    text-align: start;
+}
+
+.table-loan3-inner th:nth-child(2){
+    width: 88px;
+}
+
+.table-loan3-inner th:nth-child(3){
+    width: 170px;
+}
+
+.table-loan3-inner th:nth-child(4){
+    width: 755px;
+}
+.table-loan3-inner td:nth-child(4){
+    text-align: start;
+}
+
+.table-loan3-inner th:nth-child(5){
+    width: 141px;
+}
+.table-loan3-inner td:nth-child(5){
+    text-align: end;
+}
+
+
+
+
+.table-color th{
+    background-color: rgb(190, 69, 190);
+    color: #ffffff;
 }

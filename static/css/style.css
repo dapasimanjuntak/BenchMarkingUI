@@ -276,6 +276,84 @@ clip-path: polygon(0 0, 95% 0, 100% 50%, 95% 100%, 0 100%, 5% 50%);
     font-weight: none;
 }
 
+/*  Stylr history*/
+
+/* Tab Navigasi Modal */
+.custom-history-tabs {
+    gap: 15px;
+}
+
+.custom-history-tabs .nav-link {
+    border: none;
+    color: #6c757d;
+    font-weight: 600;
+    font-size: 15px;
+    padding: 10px 15px;
+    background: transparent;
+}
+
+.custom-history-tabs .nav-link:hover {
+    border: none;
+    color: #333;
+}
+
+/* Tab Aktif dengan garis ungu */
+.custom-history-tabs .nav-link.active {
+    color: #333;
+    border: none;
+    border-bottom: 3px solid #bd00ff; /* Warna ungu seperti di gambar */
+    background: transparent;
+}
+
+/* Area Scroll List History */
+.history-list-container {
+    max-height: 300px;
+    overflow-y: auto;
+    padding-right: 5px; 
+}
+
+/* Custom Scrollbar untuk Modal History */
+.history-list-container::-webkit-scrollbar {
+    width: 6px;
+}
+.history-list-container::-webkit-scrollbar-track {
+    background: transparent;
+}
+.history-list-container::-webkit-scrollbar-thumb {
+    background: #e0e0e0;
+    border-radius: 10px;
+}
+
+/* Judul Tanggal */
+.history-date {
+    font-size: 14px;
+    font-weight: 600;
+    color: #444;
+    margin-left: 15px;
+}
+
+/* Styling List Item */
+.history-list {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.history-list li {
+    padding: 8px 15px 8px 25px; /* Menjorok ke dalam (indent) */
+    font-size: 14px;
+    color: #79767E; /* Warna abu-abu teks */
+    cursor: pointer;
+    transition: background-color 0.2s, color 0.2s;
+}
+
+.history-list li:hover {
+    background-color: #f8f4ff;
+    color: #bd00ff;
+    border-radius: 4px;
+}
+
+/*update batas*/
 .history-card3-search{
     max-height: 30rem;
     overflow-y: auto;
@@ -340,7 +418,7 @@ clip-path: polygon(0 0, 95% 0, 100% 50%, 95% 100%, 0 100%, 5% 50%);
     border-radius: 4px;
 }
 
-/* Styling Hover untuk Button Display Columns (opsional, karena kamu sudah punya base-nya) */
+/* Styling Hover untuk Button Display Columns */
 .card3-button2:hover {
     background-color: #f8f4ff;
     color: #7b42b5;
@@ -350,7 +428,7 @@ clip-path: polygon(0 0, 95% 0, 100% 50%, 95% 100%, 0 100%, 5% 50%);
 .column-dropdown-menu {
     max-height: 250px;
     overflow-y: auto;
-    width: 260px;
+    width: 350px;
     border-radius: 8px;
     border: 1px solid #e0e0e0;
 }
@@ -599,14 +677,17 @@ clip-path: polygon(0 0, 95% 0, 100% 50%, 95% 100%, 0 100%, 5% 50%);
 }
 
 /*Table Loan 2*/
-.table-loan2{
+.table-loan2 {
     font-weight: normal !important;
-    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     overflow-x: auto;
     overflow-y: auto;
-    max-height: 55vh; /* DIPERBAIKI: dari '42rem' → 55vh agar proporsional terhadap tinggi layar di zoom 150% */
-    font-size: 16  px;
     
+    /* Ganti max-height dengan height calc() */
+    height: calc(100vh - 240px); 
+    
+    /* Perbaikan: sebelumnya "16  px" ada spasi yang membuatnya tidak terbaca */
+    font-size: 16px; 
 }
 
 .kolom1{
