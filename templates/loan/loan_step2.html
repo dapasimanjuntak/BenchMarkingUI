@@ -150,7 +150,11 @@
                 <td><input type="checkbox"></td>
                 <td><textarea name="" id="" style="width: 100px;"></textarea></td>
                 <td>1.</td>
-                <td><i class="fas fa-eye"></i></td>
+                <td class="text-center">
+                    <button type="button" class="btn btn-link p-0 text-secondary preview-btn" data-bs-toggle="modal" data-bs-target="#previewModal">
+                        <i class="fas fa-eye"></i>
+                    </button>
+                </td>
                 <td><input type="checkbox"></td>
                 <td><input type="checkbox"></td>
                 <td><input type="checkbox"></td>
@@ -230,8 +234,68 @@
     </table>
    </div>
 
+   <!----preview modal---->
+    <div class="modal fade" id="previewModal" tabindex="-1" aria-labelledby="previewModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg"> <div class="modal-content border-0 shadow-lg" style="border-radius: 12px;">
+            
+            <div class="modal-header border-0 pb-0 pe-4 pt-3">
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
 
-    
+            <div class="modal-body px-5 pb-5 pt-2">
+                
+                <div class="preview-section mb-4">
+                    <div class="preview-header">Remuneration</div>
+                    <div class="preview-content">
+                        <div class="preview-row">
+                            <div class="preview-label">Royalty rate</div>
+                            <div class="preview-value">5,00%</div>
+                        </div>
+                        <div class="preview-row">
+                            <div class="preview-label">Base</div>
+                            <div class="preview-value">Net sale</div>
+                        </div>
+                        <div class="preview-row">
+                            <div class="preview-label">Type</div>
+                            <div class="preview-value text-justify">
+                                Licensee shall pay to licensor a license issue fee of US $1,000,000 for each facility constructed for licensed plant growing and minimum annual royalty of US $60,000 (increasing by $6,000 per year until minimum royalty per licensed facility is $78,000)
+                            </div>
+                        </div>
+                        <div class="preview-row">
+                            <div class="preview-label">Compensation details</div>
+                            <div class="preview-value text-justify">
+                                Licensee shall pay to licensor a royalty of 5% of net sales of licensed plants sold by licensee, its agents or distributors; Royalties shall be payable as long as licensor owns an issued patent for licensed technology, provided that if obligation to pay royalties is based solely on licensed technology (not including patents), such obligation shall continue for 15 years after the first commercial sale
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="preview-section">
+                    <div class="preview-header">Reference</div>
+                    <div class="preview-content">
+                        <div class="preview-row">
+                            <div class="preview-label">Document title</div>
+                            <div class="preview-value">TerraSphere License Agreement</div>
+                        </div>
+                        <div class="preview-row">
+                            <div class="preview-label">Patent/trademark No.</div>
+                            <div class="preview-value">
+                                US20060196118, US20080110088, CA2499512, CA2599694, EP1858316, WO2008156538, US20070251145, WO2010110844, CA2659658
+                            </div>
+                        </div>
+                        <div class="preview-row">
+                            <div class="preview-label">Patent/trademark synopsis</div>
+                            <div class="preview-value text-justify">
+                                Method and apparatus for growing plants includes an enclosed vessel having a growth medium containing a plant seed or seedling in the upper part thereof and a free space below into which plant roots can enter, a mechanism to feed water and nutrients to the vessel to saturate the growth medium, a mechanism to remove...
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
 
     <!--end of main loan area-->
 {% endblock %}
