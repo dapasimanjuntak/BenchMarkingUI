@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Kartbes Loan Agreements App{% endblock %}</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body class="m-0">
+    <header class="bg-white px-2 py-2 d-flex align-items-center justify-content-between">
+        
+        <!--Logo Section-->
+        <div class="d-flex align-items-center">
+            <img src="{{ url_for('static', filename='img/logo.png') }}" alt="logo" height="70px">
+        </div>
+        
+        <div class="d-flex align-items-center base-buttoninput gap-5">
+        <!--Button section-->
+        <div class="base-button">
+            <button type="button" class="btn btn-success">new</button>
+            <button type="button" class="btn btn-primary">Load</button>
+        </div>
+        
+        <!--INPUT section-->
+        <div class="d-flex align-items-center gap-3 base-input">
+            <div>Curent Analysis</div>
+            <div class="d-flex flex-column">
+                <div>
+                <label for="analysis">Analysis Name:</label>
+                <input type="text" id="analysis">
+                </div>
+                <div>
+                <label for="analyst">Analyst Name: .</label>
+                <input type="text" id="analyst">
+                </div>
+            </div>
+        </div>
+        </div>
+        <!--icon section-->
+        <div class=" d-flex align-items-center gap-3 px-1">
+            <button class="btn btn-icon">
+                <img src="{{ url_for('static', filename='img/telephone1.png') }}" alt="telephone">
+            </button>
+            <button class="btn btn-icon">
+                <img src="{{ url_for('static', filename='img/globe1.png') }}" alt="globe">
+            </button>
+            <button class="btn btn-icon">
+                <img src="{{ url_for('static', filename='img/logout1.png') }}" alt="logout">
+            </button>
+            <button class="btn btn-icon">
+                <img src="{{ url_for('static', filename='img/question1.png') }}" alt="question">
+            </button>
+            <button class="btn btn-icon">
+                <img src="{{ url_for('static', filename='img/account.png') }}" alt="account">
+            </button>
+        </div> 
+    </header>
+
+    <!--Main Area-->
+    <!-- DIPERBAIKI: tambah overflow-hidden di row dan min-h agar layout tidak meluber, hapus vh-100 dari sidebar -->
+    <div class="container-fluid">
+        <div class="row flex-nowrap"> <!-- DIPERBAIKI: tambah flex-nowrap agar sidebar tidak wrap ke bawah saat zoom 150% -->
+            <!--Side bar Area--> 
+            <!-- DIPERBAIKI: hapus 'vh-100' → ganti dengan 'min-vh-100', vh-100 fixed bikin sidebar overflow saat konten panjang di zoom 150% -->
+            <nav class="col-md-3 col-lg-2 pt-3 bg-white sidebar min-vh-100">
+                <ul class="nav flex-column" >
+                    <li class="nav-item"><a href="#" class="p-2"><img src="{{ url_for('static', filename='img/Home.png') }}" alt="">Dashboard</a></li>
+                    <li class="nav-item"><a href="#" class="p-2">
+                        <div class="d-flex align-items-center">
+                        <img src="{{ url_for('static', filename='img/compareable1.png') }}" alt="">
+                        <img src="{{ url_for('static', filename='img/compareable2.png') }}" alt="">
+                        </div>Comparabel Company Search</a></li>
+                    <li class="nav-item"><a href="#" class="p-2"><img src="{{ url_for('static', filename='img/credit.png') }}" alt="">Credit Rating Tool</a></li>
+                    <li class="nav-item active"><a href="#" class="p-2"><img src="{{ url_for('static', filename='img/loan.png') }}" alt="">Loan Agreement Search</a></li>
+                    <li class="nav-item"><a href="#" class="p-2"><img src="{{ url_for('static', filename='img/service.png') }}" alt="">Comparable Service Search</a></li>
+                    <li class="nav-item"><a href="#" class="p-2"><img src="{{ url_for('static', filename='img/royalti.png') }}" alt="">Royalti Search</a></li>
+                </ul>
+            </nav>
+            <!--END Side bar Area-->
+            
+            <!--Inject content Area/Extend-->
+            <!-- DIPERBAIKI: tambah 'overflow-auto' agar konten bisa scroll saat zoom 150%, bukan terpotong -->
+            <main class="col-md-9 col-lg-10 p-2 area-content overflow-auto">
+                {% block content %}{% endblock %}
+            </main>    
+        </div>
+    </div>
+
+    <!-- Optional JavaScript -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Add any other scripts here -->
+    {% block scripts %}
+    <script src="{{ url_for('static', filename='js/javascript.js') }}"></script>
+    {% endblock %}
+
+</body>
+</html>

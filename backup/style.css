@@ -1,0 +1,153 @@
+/* Global Reset */
+*{
+    box-sizing: border-box;
+}
+body, html {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  overflow: hidden;
+}
+
+/* Sidebar Style */
+.sidebar {
+  width: 200px;
+  min-height: 100vh;
+  transition: all 0.3s ease-in-out;
+  font-size: 12px;
+  text-align: center;
+  padding-bottom: 100px;
+}
+
+/* Ikon dan Teks Vertikal */
+.nav-icon-text {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.nav-icon-text i {
+  font-size: 22px;
+  margin-bottom: 5px;
+}
+
+/* Default link */
+.sidebar .nav-link {
+  color: #939292;
+  padding: 15px 10px;
+  transition: background 0.2s, color 0.2s;
+}
+
+/* Hover effect */
+.sidebar .nav-link:hover {
+  background-color: #c9c9c9;
+  color: #939292;
+}
+
+
+/* Active link */
+.sidebar .nav-link.active {
+  background-color: #e7e4f5;
+  color: #5f3dc4;
+  font-weight: bold;
+}
+
+.sidebar .nav-link.active i {
+  color: #5f3dc4;
+}
+
+
+/* Main Content */
+.main-content {
+  min-height: 100vh;
+  transition: margin-left 0.3s;
+}
+
+/* Header style */
+.header {
+  height: 60px;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.header .icon-group i {
+  cursor: pointer;
+  font-size: 18px;
+}
+
+.header .icon-group i:hover {
+  color: #ffc107;
+}
+
+/*untuk button dan input di header*/
+/* style.css */
+
+.compact-input input {
+  font-size: 12px;
+  padding: 2px 6px;
+  height: 15px;
+}
+
+.compact-buttons button {
+  font-size: 10px;
+  height: 20px;
+  text-align: center;
+}
+
+/*bagian loan*/
+/*custom style untuk table content 1 di loan_step 1*/
+.custom-table-c1 th{
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 15px;
+  border-bottom: 2px solid gray;
+}
+
+.custom-table-c1 td{
+  font-size: 13px;
+   border-bottom: 1px solid #ddd; 
+}
+
+.blue-transparant th {
+  background-color: rgb(192, 250, 255, 1.0); /* biru cerah dengan transparansi 70% */
+  color: grey; /* supaya teks jelas terlihat */
+}
+
+
+.ctnb1{
+  padding-top: 0.1rem !important ;
+}
+
+#stb1{
+  text-align: left;
+}
+#stb2{
+  text-align: right;
+}
+
+/*custom style content 3*/
+.tb3{
+  max-height: 400px;
+  min-height: 400px;
+  overflow-y: auto;
+  overflow-x: auto;
+  max-width: 900px;
+  height: 400px;
+}
+
+.table-sticky thead th{
+  position: sticky;
+  top: 0;
+  background-color: rgba(183, 183, 183, 0.603); /* atau warna sesuai desain kamu */
+  z-index: 2; /* agar tidak tertimpa konten lain */
+  text-align: center;
+}
+
+
+
+.table-sticky td{
+ word-wrap: break-word; /* untuk browser lama */
+  word-break: break-word; /* CSS3 */
+  white-space: wrap ; /* supaya teks bisa wrap, bukan satu baris terus */
+  min-width: 150px; /* atur lebar maksimal kolom */
+}

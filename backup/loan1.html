@@ -1,0 +1,122 @@
+{% extends "base.html" %}
+
+{% block title %}Loan Agreement Search - Step 1{% endblock %}
+
+{% block content %}
+<div class="container-fluid">
+  <!-- Step Navigation Bar -->
+  <div class="row mb-3">
+    <div class="col-12">
+      <div class="d-flex justify-content-between">
+        <div class="step-item active flex-grow-1 text-center py-2" style="background-color: #e7e4f5; color: #5f3dc4;">
+          STEP 1
+        </div>
+        <div class="step-item flex-grow-1 text-center py-2" style="background-color: #f8f9fa; color: #6c757d;">
+          STEP 2
+        </div>
+        <div class="step-item flex-grow-1 text-center py-2" style="background-color: #f8f9fa; color: #6c757d;">
+          STEP 3
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Prev/Next Buttons -->
+  <div class="row mb-3">
+    <div class="col-12 d-flex justify-content-between">
+      <a href="#" class="btn btn-sm" style="background-color: #6a359c; color: white;">
+        <i class="fas fa-arrow-left"></i> Prev
+      </a>
+      <a href="{{ url_for('loan2') }}" class="btn btn-sm" style="background-color: #6a359c; color: white;">
+        Next <i class="fas fa-arrow-right"></i>
+      </a>
+    </div>
+  </div>
+
+  <!-- Main Content Layout -->
+  <div class="row">
+    <!-- Left Side - Content 1 and Content 2 -->
+    <div class="col-md-3">
+
+      <!-- Content 1 -->
+      <div class="card">
+          <!-- Your content here -->
+           <div class="text-center">Search result</div>
+           <table class="table table-borderless custom-table-c1">
+            <thead>
+              <tr class="blue-transparant">
+                <th id="stb1">criteria</th>
+                <th id="stb2">search result</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td id="stb1">1. All companies analyzed</td>
+                <td id="stb2">500</td>
+              </tr>
+            </tbody>
+           </table>
+           <div class="d-flex justify-content-between align-items-end">
+            <p>total</p>
+            <p>500</p>
+          </div>
+      </div>
+
+
+      
+      <!-- Content 2 -->
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title">CONTENT 2</h5>
+          
+        </div>
+      </div>
+    </div>
+
+    <!--content 3-->
+    <!-- Right Side - Content 3 -->
+    <!--content 3-->
+<!-- Right Side - Content 3 -->
+<div class="col-md-6">
+  <div class="card" style="height: 350px;">
+    <div class="d-flex justify-content-between align-items-center m-1 p-1">
+      <div class="search-input">
+        <input type="text" placeholder="Search..." class="form-control form-control-sm">
+      </div>
+      <div class="action-icons">
+        <span class="mx-2"><i class="fas fa-history"></i> History</span>
+        <span class="mx-2"><i class="fas fa-file-contract"></i> Agreements for review</span>
+        <span class="mx-2"><i class="fas fa-question-circle"></i> Help</span>
+      </div>
+    </div>
+    <div class="table-responsive tb3">
+      <table class="table table-bordered table-sticky">
+        <thead>
+          <tr>
+            <th>NO</th>
+            <th>description</th>
+            <th>about</th>
+            <th>geographical</th>
+            <th>geographical</th>
+            <th>geographical</th>
+            <th>geographical</th>
+            <th>geographical</th>
+            <th>geographical</th>
+            <th>geographical</th>
+            <th>geographical</th>
+            <th>geographical</th>
+            <th>geographical</th>
+            <th>geographical</th>
+            <th>geographical</th>
+          </tr>
+        </thead>
+        <tbody>
+        
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+  </div>
+</div>
+{% endblock %}

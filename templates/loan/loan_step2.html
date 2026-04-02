@@ -1,0 +1,160 @@
+<!--Ini loan_step2.html-->
+{% extends "base.html" %}
+
+{% block title %}Loan Agreement Search - Step 1{% endblock %}
+
+{% block content %}
+
+ <!--LOAN HEADER SECTION-->
+    <nav class="nav mb-3 d-flex gap-0 justify-content-center step-style">
+        <a class="nav-link step-item arrow-shape" href="{{ url_for('loan_step1') }}">
+            <span class="postion-absolute">STEP 1</span>
+        </a>
+         <a class="nav-link step-item arrow-shape" href="{{ url_for('loan_step2') }}">            
+            <span class="postion-absolute">STEP 2</span>
+        </a>       
+         <a class="nav-link step-item arrow-shape" href="{{ url_for('loan_step3') }}">
+            <span>STEP 3</span>
+        </a>
+    </nav>
+
+    <div class="d-flex justify-content-between button-header-loan">
+        <button class="btn"> <a href="{{ url_for('loan_step1') }}">Prev</a></button>
+        <button class="btn"><a href="{{ url_for('loan_step3') }}">Next</a></button>
+    </div>
+
+   <!--END OF LOAN HEADER SECTION--> 
+   
+    <!--Main LOAN area-->
+    <div class="mt-2 d-flex justify-content-end display-button-loan2 pe-3">
+        <button>
+            <i class="fas fa-table"></i>
+             <span>Display</span>
+        </button>
+    </div>
+    
+    <div class="card p-3 mt-2 table-loan2">
+    <table class="table table-loan2 table-bordered table-hover table-loan2-inner">
+        <thead class="text-center">
+            <tr>
+                <th>
+                    <div class="d-flex flex-column justify-content-center align-items-center gap-2">
+                        <div class="d-flex gap-2">
+                            <div>Search Result</div>
+                            <div class="kolom1">100</div>
+                        </div>
+                        <div class="d-flex align-items-center gap-2">
+                            <i class="fas fa-circle text-success"></i><span> Aceppted</span>
+                            <div class="kolom1">0</div>
+                        </div>
+                        <div class="d-flex align-items-center gap-2">
+                            <i class="fas fa-circle text-danger"></i><span> Rejected</span>
+                            <div class="kolom1">0</div>
+                        </div>
+                    </div>
+                </th>
+                <th>Comments</th>
+                <th>No</th>
+                <th>preview</th>
+                <th>Transaction Involving Transfers of Rights in Intangibles</th>
+                <th>Transaction Involving Transfer of Intangibles</th>
+                <th>Transaction Involving The Use Of Intangibles In Conenection With The Sale of Goods Or The Provosion os Services (No Rights in Intangibles Are Acquired) </th>
+                <th>Royalty Rate</th>
+                <th>Base</th>
+                <th>Other Payments</th>
+                <th>Compensation Details</th>
+                <th>Document Title</th>
+                <th>Patent/Trademark No.</th>
+                <th>Patent/Trademark Synopsis</th>
+            </tr>
+        </thead>
+        <tbody class="text-center">
+            <tr>
+                <td><input type="checkbox"></td>
+                <td><textarea name="" id="" style="width: 100px;"></textarea></td>
+                <td>1.</td>
+                <td><i class="fas fa-eye"></i></td>
+                <td><input type="checkbox"></td>
+                <td><input type="checkbox"></td>
+                <td><input type="checkbox"></td>
+                <td>5,00%</td>
+                <td></td>
+                <td>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed optio molestias deserunt quos quasi similique dolores? Magni qui dolores itaque ratione! Fuga asperiores laborum repellat, numquam sed cumque possimus iste!</td>
+                <td>Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi ut, nisi, atque quidem itaque quia consequatur architecto, fugit vero fuga consequuntur reiciendis placeat pariatur tempore id. Unde veniam labore quis!</td>
+                <td>TerraSphere License Agreement</td>
+                <td>US20006019196118, 72394013704324, US91491793713, WO107307417490174, CA73947204710374</td>
+                <td>Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet atque aliquam laborum in mollitia magnam, totam minima qui nesciunt accusantium neque quam quos dolores nihil aspernatur ipsum enim! Sequi, amet.</td>
+            </tr>
+              <tr>
+                <td><input type="checkbox"></td>
+                <td><textarea name="" id="" style="width: 100px;"></textarea></td>
+                <td>1.</td>
+                <td><i class="fas fa-eye"></i></td>
+                <td><input type="checkbox"></td>
+                <td><input type="checkbox"></td>
+                <td><input type="checkbox"></td>
+                <td>5,00%</td>
+                <td></td>
+                <td>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed optio molestias deserunt quos quasi similique dolores? Magni qui dolores itaque ratione! Fuga asperiores laborum repellat, numquam sed cumque possimus iste!</td>
+                <td>Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi ut, nisi, atque quidem itaque quia consequatur architecto, fugit vero fuga consequuntur reiciendis placeat pariatur tempore id. Unde veniam labore quis!</td>
+                <td>TerraSphere License Agreement</td>
+                <td>US20006019196118, 72394013704324, US91491793713, WO107307417490174, CA73947204710374</td>
+                <td>Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet atque aliquam laborum in mollitia magnam, totam minima qui nesciunt accusantium neque quam quos dolores nihil aspernatur ipsum enim! Sequi, amet.</td>
+            </tr>
+              <tr>
+                <td><input type="checkbox"></td>
+                <td><textarea name="" id="" style="width: 100px;"></textarea></td>
+                <td>1.</td>
+                <td><i class="fas fa-eye"></i></td>
+                <td><input type="checkbox"></td>
+                <td><input type="checkbox"></td>
+                <td><input type="checkbox"></td>
+                <td>5,00%</td>
+                <td></td>
+                <td>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed optio molestias deserunt quos quasi similique dolores? Magni qui dolores itaque ratione! Fuga asperiores laborum repellat, numquam sed cumque possimus iste!</td>
+                <td>Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi ut, nisi, atque quidem itaque quia consequatur architecto, fugit vero fuga consequuntur reiciendis placeat pariatur tempore id. Unde veniam labore quis!</td>
+                <td>TerraSphere License Agreement</td>
+                <td>US20006019196118, 72394013704324, US91491793713, WO107307417490174, CA73947204710374</td>
+                <td>Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet atque aliquam laborum in mollitia magnam, totam minima qui nesciunt accusantium neque quam quos dolores nihil aspernatur ipsum enim! Sequi, amet.</td>
+            </tr>
+              <tr>
+                <td><input type="checkbox"></td>
+                <td><textarea name="" id="" style="width: 100px;"></textarea></td>
+                <td>1.</td>
+                <td><i class="fas fa-eye"></i></td>
+                <td><input type="checkbox"></td>
+                <td><input type="checkbox"></td>
+                <td><input type="checkbox"></td>
+                <td>5,00%</td>
+                <td></td>
+                <td>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed optio molestias deserunt quos quasi similique dolores? Magni qui dolores itaque ratione! Fuga asperiores laborum repellat, numquam sed cumque possimus iste!</td>
+                <td>Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi ut, nisi, atque quidem itaque quia consequatur architecto, fugit vero fuga consequuntur reiciendis placeat pariatur tempore id. Unde veniam labore quis!</td>
+                <td>TerraSphere License Agreement</td>
+                <td>US20006019196118, 72394013704324, US91491793713, WO107307417490174, CA73947204710374</td>
+                <td>Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet atque aliquam laborum in mollitia magnam, totam minima qui nesciunt accusantium neque quam quos dolores nihil aspernatur ipsum enim! Sequi, amet.</td>
+            </tr>
+              <tr>
+                <td><input type="checkbox"></td>
+                <td><textarea name="" id="" style="width: 100px;"></textarea></td>
+                <td>1.</td>
+                <td><i class="fas fa-eye"></i></td>
+                <td><input type="checkbox"></td>
+                <td><input type="checkbox"></td>
+                <td><input type="checkbox"></td>
+                <td>5,00%</td>
+                <td></td>
+                <td>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed optio molestias deserunt quos quasi similique dolores? Magni qui dolores itaque ratione! Fuga asperiores laborum repellat, numquam sed cumque possimus iste!</td>
+                <td>Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi ut, nisi, atque quidem itaque quia consequatur architecto, fugit vero fuga consequuntur reiciendis placeat pariatur tempore id. Unde veniam labore quis!</td>
+                <td>TerraSphere License Agreement</td>
+                <td>US20006019196118, 72394013704324, US91491793713, WO107307417490174, CA73947204710374</td>
+                <td>Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet atque aliquam laborum in mollitia magnam, totam minima qui nesciunt accusantium neque quam quos dolores nihil aspernatur ipsum enim! Sequi, amet.</td>
+            </tr>
+        </tbody>
+    </table>
+   </div>
+
+
+    
+
+    <!--end of main loan area-->
+{% endblock %}
